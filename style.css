@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    width: 84%;
+    height: 90px;
+    padding: 0% 8%;
+    background: rgb(255, 255, 255, 0.9);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+header .logo {
+    height: 40px;
+    gap: 10px;
+}
+
+.logo img {
+    height: 100%;
+}
+
+header nav {
+    height: 50px;
+    gap: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+header nav span{
+    cursor: pointer;
+    color: #666666;
+    transition: 0.4s;
+}
+
+header nav span:hover{
+    color: black;
+}
+
+header nav .template-btn{
+    color: #FFFFFF;
+    padding: 10px 30px;
+    background: #222222;
+    border-radius: 4px;
+}
+
+header nav .template-btn:hover{
+    background: #a5a5a5;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+main .download-app {
+    position: relative;
+    width: 80%;
+    height: 650px;
+    padding: 0% 10%;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 90px;
+    z-index: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .download-app .info {
+    width: 420px;
+    height: 400px;
+    color: #222222;
+}
+
+main .download-app .logo {
+    height: 64px;
+    gap: 20px;
+    font-size: 24px;
+}
+
+main .download-app .info h2 {
+    font-weight: 400;
+    font-size: 54px;
+    margin: 0px 5px;
+}
+
+main .download-app .info .app-buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .download-app .info .app-buttons span {
+    padding: 10px 30px;
+    background-color: #222222;
+    border-radius: 4px;
+    color: #FFFFFF;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+main .download-app .info .app-buttons span:hover {
+    background: #a5a5a5;
+    color: black;
+}
+
+main .download-app .phone-image {
+    align-self: end;
+}
+
+main .features {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background: #222222;
+    top: 740px;
+}
+
+main .features .feature-blocks {
+    padding: 70px 10%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .features .feature-blocks .item{
+    position: relative;
+    height: 490px;
+    width: 380px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+main .features .info {
+    text-align: center;
+    margin-top: 100px;
+}
+
+main .features .info p, main .features .info h2{
+    margin: 0;
+    font-weight: 400;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+main .features .info p {
+    font-size: 16px;
+}
+
+main .features .info h2 {
+    font-size: 36px;
+}
+
+main .features .feature-blocks .item .description {
+    height: 200px;
+    width: 80%;
+    padding: 0px 10%;
+    background: rgb(242, 242, 242, 0.9);
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+main .features .feature-blocks .item .description img {
+    position: relative;
+    width: 64px;
+    bottom: 32px;
+}
+
+main .features .feature-blocks .item .description h4 {
+    position: relative;
+    margin: 0;
+    bottom: 12px;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+main .features .feature-blocks .item .description p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+main .features .feature-blocks .item .bg-image {
+    position: absolute;
+    width: 227px;
+    z-index: 0;
+}
+
+main .advantages {
+    position: relative;
+    top: 740px;
+    padding: 80px 15%;
+    width: 70%;
+    background-color: #FF5437;
+    display: flex;
+    justify-content: space-between;
+}
+
+main .advantages .advantage-block {
+    height: 150px;
+    width: 300px;
+    text-align: center;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+main .advantages .advantage-block h3 {
+    font-size: 80px;
+    margin: 0;
+}
+
+main .advantages .advantage-block p {
+    margin: 0;
+    font-size: 16px;
+}
