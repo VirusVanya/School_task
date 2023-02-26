@@ -4,6 +4,16 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+* {
+    scroll-margin-top: 90px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }
 
 header {
@@ -11,12 +21,12 @@ header {
     width: 84%;
     height: 90px;
     padding: 0% 8%;
-    background: rgb(255, 255, 255, 0.9);
+    background: rgb(255, 255, 255, 1);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .logo {
@@ -65,26 +75,92 @@ header nav .template-btn:hover{
     background: #a5a5a5;
 }
 
+header nav .mobile-nav {
+    position: relative;
+    display: none;
+    flex-direction: column;
+    align-items: end;
+}
+
+header nav .mobile-nav ion-icon {
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+header nav .mobile-nav .list-button:hover ion-icon {
+    transform: rotate(90deg);
+}
+
+header nav .mobile-nav ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 70px;
+    box-shadow: 0px 15px 15px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 0px 0px 10px 10px;
+}
+
+header nav .mobile-nav ul li, header nav .mobile-nav .list-button {
+    display: flex;
+    width: 120px;
+    height: 50px;
+    background-color: #FFFFFF;
+    color: #666666;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+header nav .mobile-nav .list-button:hover {
+    color: black;
+}
+
+header nav .mobile-nav ul li:hover {
+    background-color: #a5a5a5;
+    color: black;
+}
+
+header nav .mobile-nav ul #last {
+    border-radius: 0px 0px 10px 10px;
+}
+
 main {
     display: flex;
     flex-direction: column;
 }
 
-main .download-app {
+main .download-app, main .technology, main .security {
     position: relative;
-    width: 80%;
-    height: 650px;
-    padding: 0% 10%;
-    background-color: #FFFFFF;
-    position: absolute;
+    width: 70%;
+    padding: 70px 15% 0px 15%;
     top: 90px;
     z-index: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
-main .download-app .info {
+main .download-app, main .technology {
+    flex-wrap: wrap;
+}
+
+main .security {
+    flex-wrap: wrap-reverse;
+}
+
+main .download-app, main .technology {
+    background-color: #FFFFFF;
+}
+
+main .security {
+    background-color: #F2F2F2;
+}
+
+main .download-app .info, main .technology .info, main .security .info {
     width: 420px;
     height: 400px;
     color: #222222;
@@ -106,6 +182,7 @@ main .download-app .info .app-buttons {
     width: 300px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 main .download-app .info .app-buttons span {
@@ -122,7 +199,8 @@ main .download-app .info .app-buttons span:hover {
     color: black;
 }
 
-main .download-app .phone-image {
+main .download-app .phone-image, main .technology .phone-image, main .security .phone-image {
+    width: 380px;
     align-self: end;
 }
 
@@ -131,9 +209,9 @@ main .features {
     align-items: center;
     flex-direction: column;
     position: relative;
+    top: 90px;
     width: 100%;
     background: #222222;
-    top: 740px;
 }
 
 main .features .feature-blocks {
@@ -219,12 +297,13 @@ main .features .feature-blocks .item .bg-image {
 
 main .advantages {
     position: relative;
-    top: 740px;
+    top: 90px;
     padding: 80px 15%;
-    width: 70%;
     background-color: #FF5437;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 main .advantages .advantage-block {
@@ -243,4 +322,296 @@ main .advantages .advantage-block h3 {
 main .advantages .advantage-block p {
     margin: 0;
     font-size: 16px;
+}
+
+main .modes {
+    position: relative;
+    top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 25%;
+    text-align: center;
+    background-color: #222222;
+}
+
+main .modes p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+main .modes h2 {
+    margin: 0px 0px 10px 0px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+main .modes img {
+    width: 400px;
+    margin-top: 50px;
+}
+
+main .modes hr{
+    margin: 0;
+    width: 600px;
+    border: 1px solid #E5E5E5;
+}
+
+main .modes .mode-buttons {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+    color: #FFFFFF;
+}
+
+main .modes .mode-buttons span ion-icon {
+    font-size: 25px;
+    margin-bottom: 3px;
+    transition: 0.8s;
+}
+
+main .modes .mode-buttons span p {
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+main .modes .mode-buttons span {
+    cursor: pointer;
+}
+
+main .modes .mode-buttons span:hover ion-icon {
+    transform: rotate(360deg);
+    color: #f7c00a;
+}
+
+main .modes .mode-buttons span:hover p {
+    color: #f7c00a;
+}
+
+main .pricing {
+    position: relative;
+    top: 90px;
+    padding: 70px 10%;
+    text-align: center;
+}
+
+main .pricing p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #666666;
+}
+
+main .pricing .title {
+    color: #222222;
+}
+
+main .pricing h2 {
+    margin: 0px 0px 10px 0px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #222222;
+}
+
+main .pricing .subscription {
+    position: relative;
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main .pricing .subscription .sub-block {
+    position: relative;
+    width: 380px;
+    height: 260px;
+    background-color: #F2F2F2;
+    border-radius: 20px;
+    padding: 40px 0px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main .pricing .subscription .sub-block:hover {
+    opacity: 1;
+}
+
+main .pricing .subscription .sub-block p {
+    font-weight: 400;
+    font-size: 17px;
+    color: #222222;
+    margin: 0;
+}
+
+main .pricing .subscription .sub-block h2 {
+    font-weight: 400;
+    font-size: 90px;
+    margin: 0;
+}
+
+main .pricing .subscription .sub-block span {
+    position: relative;
+    padding: 10px 25px;
+    color: #FFFFFF;
+    border-radius: 4px;
+    top: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main .pricing .subscription .sub-block span:hover {
+    -webkit-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+}
+
+main .download-now {
+    position: relative;
+    top: 90px;
+    padding: 70px 10%;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+main .download-now p {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #666666;
+}
+
+main .download-now .title {
+    color: #222222;
+}
+
+main .download-now h2 {
+    margin: 0px 0px 10px 0px;
+    font-weight: 400;
+    font-size: 32px;
+    color: #222222;
+}
+
+main .download-now img {
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 12px;
+}
+
+main .download-now img:hover {
+    -webkit-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 12px 6px rgba(0,0,0,0.3);
+}
+
+main .instructions {
+    position: relative;
+    text-align: center;
+    top: 90px;
+    padding: 100px 10%;
+    background: #E5E5E5;
+    color: #222222;
+}
+
+main .instructions h2 {
+    font-weight: 400;
+    font-size: 32px;
+    margin: 0px 0px 10px 0px;
+}
+
+main .instructions p {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0px 0px 10px 0px;
+}
+
+main .instructions .answers {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+main .instructions .answers .answer-block {
+    position: relative;
+    width: 570px;
+    height: 170px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main .instructions .answers .answer-block:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: relative;
+    top: 90px;
+    padding: 100px 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h2 {
+    color: #222222;
+    font-size: 32px;
+    margin: 0px 0px 20px 0px;
+}
+
+footer p {
+    color: #666666;
+}
+
+footer .socials {
+    width: 140px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .socials ion-icon {
+    font-size: 35px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+footer .socials #twitter:hover {
+    color: #1DA1F2;
+}
+
+footer .socials #instagram:hover {
+    color: #c13584;
+}
+
+footer .socials #facebook:hover {
+    color: #4267B2;
+}
+
+@media screen and (max-width: 650px){
+    main .modes hr{
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    header nav .navigation-button {
+        display: none;
+    }
+
+    header nav .mobile-nav {
+        display: flex;
+    }
 }
