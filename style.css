@@ -5,6 +5,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
