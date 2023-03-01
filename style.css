@@ -135,7 +135,6 @@ main {
 
 main .download-app, main .technology, main .security {
     position: relative;
-    width: 70%;
     padding: 70px 15% 0px 15%;
     top: 90px;
     z-index: 0;
@@ -257,7 +256,6 @@ main .features .info h2 {
 
 main .features .feature-blocks .item .description {
     height: 200px;
-    width: 80%;
     padding: 0px 10%;
     background: rgb(242, 242, 242, 0.9);
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
@@ -330,7 +328,7 @@ main .modes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 25%;
+    padding: 80px 10%;
     text-align: center;
     background-color: #222222;
 }
@@ -600,9 +598,245 @@ footer .socials #facebook:hover {
     color: #4267B2;
 }
 
-@media screen and (max-width: 650px){
+@media screen and (max-width: 350px){   
+    main .features .info p {
+        font-size: 14px;
+    }
+    
+    main .features .info h2 {
+        font-size: 30px;
+    }
+
+    main .features .feature-blocks {
+        padding: 70px 0%;
+    }
+
+    main .features .feature-blocks .item{
+        height: 410px;
+        width: 300px;
+    }
+
+    main .features .feature-blocks .item .description {
+        height: 160px;
+        padding: 0px 5%;
+    }
+    
+    main .features .feature-blocks .item .description img {
+        width: 54px;
+        bottom: 27px;
+    }
+    
+    main .features .feature-blocks .item .description h4 {
+        bottom: 10px;
+        font-size: 20px;
+    }
+    
+    main .features .feature-blocks .item .description p {
+        font-size: 13px;
+    }
+    
+    main .features .feature-blocks .item .bg-image {
+        width: 195px;
+    }
+
+    main .modes p {
+        font-size: 16px;
+    }
+    
+    main .modes h2 {
+        font-size: 30px;
+    }
+
+    main .modes img {
+        width: 250px;
+    }
+    
+    main .modes hr{
+        width: 300px;
+    }
+
+    main .technology .info p, main .security .info p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    header nav {
+        gap: 0px;
+    }
+    
+    header nav .mobile-nav ul li, header nav .mobile-nav .list-button {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    header nav .template-btn{
+        display: none;
+    }
+
+    main .download-app .info h2 {
+        font-size: 40px;
+    }
+
+    main .download-app, main .technology, main .security {
+        padding: 50px 7% 0px 7%;
+    }
+
+    main .download-app .phone-image, main .technology .phone-image, main .security .phone-image {
+        width: 300px;
+    }
+
+    main .pricing {
+        padding: 70px 5%;
+    }
+    
+    main .pricing .subscription .sub-block {
+        width: 330px;
+        height: 210px;
+    }
+
+    main .pricing .subscription .sub-block p {
+        font-size: 16px;
+    }
+    
+    main .pricing .subscription .sub-block h2 {
+        font-size: 70px;
+    }
+    
+    main .pricing .subscription .sub-block span {
+        padding: 8px 23px;
+        top: 20px;
+    }
+
+    main .instructions {
+        padding: 50px 10%;
+    }
+
+    main .instructions h2 {
+        font-size: 30px;
+    }
+    
+    main .instructions p {
+        font-size: 14px;
+    }
+    
+    main .instructions .answers .answer-block {
+        width: 100%;
+        height: 230px;
+    }
+}
+
+@media screen and (max-width: 550px) and (min-width: 350px){
+    main .features .info p {
+        font-size: 14px;
+    }
+    
+    main .features .info h2 {
+        font-size: 30px;
+    }
+
+    main .features .feature-blocks {
+        padding: 70px 0%;
+    }
+    
+    main .features .feature-blocks .item{
+        height: 440px;
+        width: 330px;
+    }
+
+    main .features .feature-blocks .item .description {
+        height: 180px;
+        padding: 0px 5%;
+    }
+    
+    main .features .feature-blocks .item .description img {
+        width: 54px;
+        bottom: 27px;
+    }
+    
+    main .features .feature-blocks .item .description h4 {
+        bottom: 11px;
+        font-size: 22px;
+    }
+    
+    main .features .feature-blocks .item .description p {
+        font-size: 14px;
+    }
+    
+    main .features .feature-blocks .item .bg-image {
+        width: 210px;
+    }
+
+    main .modes p {
+        font-size: 16px;
+    }
+    
+    main .modes h2 {
+        font-size: 30px;
+    }
+
+    main .modes img {
+        width: 280px;
+    }
+    
+    main .modes hr{
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 650px) and (min-width: 550px){
+    main .modes img {
+        width: 350px;
+    }
+
     main .modes hr{
         width: 500px;
+    }
+}
+
+
+@media screen and (max-width: 650px) and (min-width: 450px){
+    header nav {
+        gap: 0px;
+    }
+    
+    header nav .mobile-nav ul li, header nav .mobile-nav .list-button {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    header nav .template-btn{
+        padding: 8px 17px;
+        font-size: 14px;
+    }
+
+    main .download-app .info h2 {
+        font-size: 44px;
+    }
+
+    main .download-app, main .technology, main .security {
+        padding: 70px 10% 0px 10%;
+    }
+
+    main .download-app .phone-image, main .technology .phone-image, main .security .phone-image {
+        width: 300px;
+    }
+
+    main .instructions {
+        padding: 70px 10%;
+    }
+
+    main .instructions h2 {
+        font-size: 30px;
+    }
+    
+    main .instructions p {
+        font-size: 14px;
+    }
+    
+    main .instructions .answers .answer-block {
+        width: 100%;
+        height: 180px;
     }
 }
 
