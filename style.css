@@ -5,6 +5,11 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -ms-user-select: none;
 }
 
 * {
