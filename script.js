@@ -9,6 +9,12 @@ let list_arrow = document.getElementsByClassName('list-arrow')[0];
 let buttons_list = document.getElementsByClassName('buttons-list')[0];
 let main = document.getElementsByClassName('main')[0];
 let footer = document.getElementsByClassName('footer')[0];
+let purchase_buttons = document.getElementsByClassName('purchase-button');
+let purchase_form = document.getElementsByClassName('purchase-form')[0];
+let close_button = document.getElementsByClassName('close-button')[0];
+let blur_block = document.getElementsByClassName('blur')[0];
+let pay_inputs = document.getElementsByClassName('pay-input');
+let numbers = ['1','2','3','4','5','6','7','8','9','0'];
 
 for (let i = 0; i < nav_buttons.length; i++) {
     nav_buttons[i].addEventListener('click', () => {
@@ -83,4 +89,55 @@ main.addEventListener('click', () => {
 footer.addEventListener('click', () => {
     list_arrow.style.transform = '';
     buttons_list.style.display = 'none';
+});
+
+for(let i=0; i<purchase_buttons.length; i++) {
+    purchase_buttons[i].addEventListener('click', () => {
+        purchase_form.style.display = 'flex';
+        blur_block.style.display = 'flex';
+    });
+}
+
+close_button.addEventListener('click', () => {
+    purchase_form.style.display = 'none';
+    blur_block.style.display = 'none';
+});
+
+pay_inputs[1].addEventListener('keydown', (event) => {
+    if(pay_inputs[1].value.length % 5 == 4 && event.keyCode!=8) {
+        pay_inputs[1].value += " ";
+    }
+});
+
+pay_inputs[1].addEventListener('keyup', () => {
+    if(numbers.includes(pay_inputs[1].value[pay_inputs[1].value.length-1]) == false) {
+        pay_inputs[1].value = pay_inputs[1].value.slice(0, -1);
+    }
+    if(pay_inputs[1].value.length >= 20) {
+        pay_inputs[1].value = pay_inputs[1].value.slice(0, 19);
+    }
+});
+
+pay_inputs[2].addEventListener('keydown', (event) => {
+    if(pay_inputs[2].value.length == 2 && event.keyCode != 8) {
+        pay_inputs[2].value += "/";
+    }
+});
+
+pay_inputs[2].addEventListener('keyup', () => {
+    if(numbers.includes(pay_inputs[2].value[pay_inputs[2].value.length-1]) == false) {
+        pay_inputs[2].value = pay_inputs[2].value.slice(0, -1);
+    }
+    if(pay_inputs[2].value.length >= 6) {
+        pay_inputs[2].value = pay_inputs[2].value.slice(0, 5);
+    }
+});
+
+pay_inputs[3].addEventListener('keyup', () => {
+    if(numbers.includes(pay_inputs[3].value[pay_inputs[3].value.length-1]) == false) {
+        pay_inputs[3].value = pay_inputs[3].value.slice(0, -1);
+    }
+    if(pay_inputs[3].value.length >= 4) {
+        pay_inputs[3].value = pay_inputs[3].value.slice(0, 3);
+    }
 });

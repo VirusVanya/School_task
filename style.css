@@ -558,6 +558,114 @@ main .instructions .answers .answer-block:hover {
     text-decoration: underline;
 }
 
+main form {
+    position: fixed;
+    padding: 30px;
+    top: 230px;
+    background-color: #FFFFFF;
+    z-index: 3;
+    width: 450px;
+    height: 440px;
+    align-self: center;
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+main form .close-button {
+    position: absolute;
+    left: 450px;
+    top: 33px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+main form .close-button:hover {
+    color: #E50000;
+    transform: rotate(360deg);
+}
+
+main form h2 {
+    margin: 0;
+}
+
+main form label {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+main form .field-block .input-block {
+    position: relative;
+    width: 100%-4px;
+    height: 46px;
+    border: 2px solid #B1B1B1;
+    border-radius: 5px;
+}
+
+main form .field-block .smaller-inputs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main form .pay-input {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    border: 2px solid #B1B1B1;
+    font-weight: 400;
+    font-size: 16px;
+    outline: 2px solid #FFFFFF;
+    width: 100%-4px;
+    height: 44px;
+    border-radius: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main form .pay-input:focus {
+    border: 2px solid #000000;
+    outline: 2px solid #CBCBCB;
+}
+
+main form .field-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main form .card {
+    height: 45%;
+}
+
+main form .email, main form .full-name {
+    height: 20%;
+}
+
+main form .submit {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    height: 13%;
+    height: 100%;
+    width: 100px;
+    border: none;
+    background-color: #2D4FF6;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main form .submit:hover {
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
 footer {
     position: relative;
     top: 90px;
@@ -602,6 +710,15 @@ footer .socials #instagram:hover {
 
 footer .socials #facebook:hover {
     color: #4267B2;
+}
+
+.blur {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    backdrop-filter: blur(10px);
 }
 
 @media screen and (max-width: 350px){   

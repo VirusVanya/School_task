@@ -162,19 +162,19 @@
                     <p class="title" style="color:#0278ED;">Standard</p>
                     <h2 style="color:#0278ED;">$9</h2>
                     <p>MONTHLY</p>
-                    <span style="background-color:#0278ED;">BUY NOW</span>
+                    <span style="background-color:#0278ED;" class="purchase-button">BUY NOW</span>
                 </div>
                 <div class="sub-block">
                     <p class="title" style="color:#FF5437;">Premium</p>
                     <h2 style="color:#FF5437;">$99</h2>
                     <p>ANNUALLY</p>
-                    <span style="background-color:#FF5437;">BUY NOW</span>
+                    <span style="background-color:#FF5437;" class="purchase-button">BUY NOW</span>
                 </div>
                 <div class="sub-block">
                     <p class="title" style="color:#FF9209;">Lifetime</p>
                     <h2 style="color:#FF9209;">$149</h2>
                     <p>UP FRONT</p>
-                    <span style="background-color:#FF9209;">BUY NOW</span>
+                    <span style="background-color:#FF9209;" class="purchase-button">BUY NOW</span>
                 </div>
             </div>
         </div>
@@ -206,6 +206,27 @@
                 </div>
             </div>
         </div>
+        <form class="purchase-form" style="display: none;">
+            <ion-icon name="close" class="close-button"></ion-icon>
+            <h2>Payment</h2>
+            <div class="field-block email">
+                <label for="">Email</label>
+                <input type="email" class="email-input pay-input" placeholder="Email">
+            </div>
+            <div class="field-block card">
+                <label for="">Card information</label>
+                <input type="text" class="number pay-input" placeholder="0000 0000 0000 0000">
+                <div class="smaller-inputs">
+                    <input type="text" class="expire-date pay-input" placeholder="MM/YY">
+                    <input type="text" class="cvv pay-input" placeholder="CVC">
+                </div>
+            </div>
+            <div class="field-block full-name">
+                <label for="">Name on card</label>
+                <input type="text" class="full-name-input pay-input" placeholder="Name">
+            </div>
+            <input type="submit" value="Submit" class="submit">
+        </form>
     </main>
     <footer class="footer">
         <img src="images/favicon.png" alt="" srcset="">
@@ -217,6 +238,7 @@
         </div>
         <p>Powered by Webflow. All rights reserved by Happy Apps, Inc. Licensing</p>
     </footer>
+    <div class="blur" style="display: none;"></div>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
