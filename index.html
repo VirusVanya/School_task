@@ -211,19 +211,19 @@
             <h2>Payment</h2>
             <div class="field-block email">
                 <label for="">Email</label>
-                <input type="email" class="email-input pay-input" placeholder="Email">
+                <input type="email" class="email-input pay-input" placeholder="Email" required title="" pattern="^\S+@\S+\.\S+$">
             </div>
             <div class="field-block card">
                 <label for="">Card information</label>
-                <input type="text" class="number pay-input" placeholder="0000 0000 0000 0000">
+                <input type="text" class="number pay-input" placeholder="0000 0000 0000 0000" required title="" maxlength="19" minlength="19">
                 <div class="smaller-inputs">
-                    <input type="text" class="expire-date pay-input" placeholder="MM/YY">
-                    <input type="text" class="cvv pay-input" placeholder="CVC">
+                    <input type="text" class="expire-date pay-input" placeholder="MM/YY" required title="" maxlength="5" minlength="5">
+                    <input type="text" class="cvv pay-input" placeholder="CVC" required title="" maxlength="3" minlength="3">
                 </div>
             </div>
             <div class="field-block full-name">
                 <label for="">Name on card</label>
-                <input type="text" class="full-name-input pay-input" placeholder="Name">
+                <input type="text" class="full-name-input pay-input" placeholder="Name" required title="">
             </div>
             <input type="submit" value="Submit" class="submit">
         </form>

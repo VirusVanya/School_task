@@ -104,32 +104,32 @@ close_button.addEventListener('click', () => {
 });
 
 pay_inputs[1].addEventListener('keydown', (event) => {
-    if(pay_inputs[1].value.length % 5 == 4 && event.keyCode!=8) {
+    if((pay_inputs[1].value.length == 4 || pay_inputs[1].value.length == 9 || pay_inputs[1].value.length == 14) && event.keyCode != 8 && event.keyCode != 32) {
         pay_inputs[1].value += " ";
+    }
+    if(numbers.includes(pay_inputs[1].value[pay_inputs[1].value.length-1]) == false && pay_inputs[1].value[pay_inputs[1].value.length-1] != ' ') {
+        pay_inputs[1].value = pay_inputs[1].value.slice(0, -1);
     }
 });
 
 pay_inputs[1].addEventListener('keyup', () => {
-    if(numbers.includes(pay_inputs[1].value[pay_inputs[1].value.length-1]) == false) {
+    if(numbers.includes(pay_inputs[1].value[pay_inputs[1].value.length-1]) == false && pay_inputs[1].value[pay_inputs[1].value.length-1] != ' ') {
         pay_inputs[1].value = pay_inputs[1].value.slice(0, -1);
-    }
-    if(pay_inputs[1].value.length >= 20) {
-        pay_inputs[1].value = pay_inputs[1].value.slice(0, 19);
     }
 });
 
 pay_inputs[2].addEventListener('keydown', (event) => {
-    if(pay_inputs[2].value.length == 2 && event.keyCode != 8) {
+    if(pay_inputs[2].value.length == 2 && event.keyCode != 8 && event.keyCode != 191) {
         pay_inputs[2].value += "/";
+    }
+    if(numbers.includes(pay_inputs[2].value[pay_inputs[2].value.length-1]) == false && pay_inputs[2].value[pay_inputs[2].value.length-1] != '/') {
+        pay_inputs[2].value = pay_inputs[2].value.slice(0, -1);
     }
 });
 
 pay_inputs[2].addEventListener('keyup', () => {
-    if(numbers.includes(pay_inputs[2].value[pay_inputs[2].value.length-1]) == false) {
+    if(numbers.includes(pay_inputs[2].value[pay_inputs[2].value.length-1]) == false && pay_inputs[2].value[pay_inputs[2].value.length-1] != '/') {
         pay_inputs[2].value = pay_inputs[2].value.slice(0, -1);
-    }
-    if(pay_inputs[2].value.length >= 6) {
-        pay_inputs[2].value = pay_inputs[2].value.slice(0, 5);
     }
 });
 
@@ -137,7 +137,9 @@ pay_inputs[3].addEventListener('keyup', () => {
     if(numbers.includes(pay_inputs[3].value[pay_inputs[3].value.length-1]) == false) {
         pay_inputs[3].value = pay_inputs[3].value.slice(0, -1);
     }
-    if(pay_inputs[3].value.length >= 4) {
-        pay_inputs[3].value = pay_inputs[3].value.slice(0, 3);
-    }
+});
+
+purchase_form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    purchase_form.reset()
 });
