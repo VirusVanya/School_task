@@ -139,7 +139,41 @@ pay_inputs[3].addEventListener('keyup', () => {
     }
 });
 
+function submitForm() {
+    const btn = document.getElementsByClassName('btn')[0];
+    var doneTimeout = null, resetTimeout = null;
+
+	const runClass = "btn--running";
+	const doneClass = "btn--done";
+	// `.btn--running .btn__progress-fill` `stroke-dashoffset` duration in ms
+	const submitDuration = 2000;
+	const resetDuration = 1500;
+
+	// fake the submission
+	btn.disabled = true;
+	btn.classList.add(runClass);
+
+	clearTimeout(doneTimeout);
+	clearTimeout(resetTimeout);
+
+	doneTimeout = setTimeout(() => {
+		btn.classList.remove(runClass);
+		btn.classList.add(doneClass);
+				
+		// reset the button
+		resetTimeout = setTimeout(() => {
+			btn.disabled = false;
+			btn.classList.remove(doneClass);
+		}, resetDuration);
+        setTimeout(() => {
+            purchase_form.style.display = 'none';
+            blur_block.style.display = 'none';
+            purchase_form.reset();
+        }, 1000);
+	}, 600 + submitDuration);
+}
+
 purchase_form.addEventListener('submit', (event) => {
     event.preventDefault();
-    purchase_form.reset()
+    submitForm();
 });

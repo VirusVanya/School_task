@@ -16,6 +16,15 @@ body {
 * {
     scroll-margin-top: 90px;
 }
+:root {
+	--hue: 223;
+	--bg1: hsl(var(--hue),10%,90%);
+	--bg2: hsl(var(--hue),10%,80%);
+	--fg1: hsl(var(--hue),10%,10%);
+	--fg2: hsl(var(--hue),10%,20%);
+	--primary1: hsl(var(--hue),90%,55%);
+	--primary2: hsl(var(--hue),90%,45%);
+}
 
 a {
     text-decoration: none;
@@ -565,7 +574,6 @@ main form {
     background-color: #FFFFFF;
     z-index: 3;
     width: 450px;
-    height: 440px;
     align-self: center;
     border-radius: 20px;
     flex-direction: column;
@@ -636,25 +644,127 @@ main form .email, main form .full-name {
     height: 20%;
 }
 
+/* Submit button */
+
 main form .submit {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: #FFFFFF;
-    border-radius: 20px;
-    height: 13%;
-    height: 100%;
-    width: 120px;
-    border: none;
-    background-color: #2D4FF6;
+    position: absolute;
+    width: 125px;
+    height: 60px;
+    border-radius: 30px;
+    opacity: 0;
     cursor: pointer;
-    transition: 0.4s;
 }
 
-main form .submit:hover {
-    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+/* Main button styles */
+.btn {
+	background-color: transparent;
+	border-radius: 1.5em;
+	display: flex;
+	position: relative;
+	width: 7.5em;
+	height: 3em;
+	transition: 0.3s ease-in-out;
+    border: none;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.btn:not(:disabled):active {
+	transform: translateY(0.1em);
+}
+.btn__text {
+	background-color: var(--primary1);
+	border-radius: inherit;
+	color: hsl(0,0%,100%);
+	display: inline-block;
+	padding: 0.75em 1.5em;
+	transition: 0.15s linear, 0.15s 0.3s ease-in-out;
+	width: 100%;
+}
+
+.btn:not(:disabled):hover .btn__text {
+	background-color: var(--primary2);
+}
+
+.btn:not(:disabled):focus .btn__text {
+	background-color: var(--primary2);
+	
+}
+
+.btn__progress {
+	overflow: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3em;
+	height: 3em;
+	visibility: hidden;
+    transform: scale(0.8);
+}
+.btn__progress-track {
+	right: 12px;
+	stroke: var(--bg2);
+	stroke-width: 24;
+}
+.btn__progress-fill {
+	stroke: var(--primary1);
+	stroke-dashoffset: 125.66;
+}
+.btn__progress-check {
+	stroke: hsl(0,0%,100%);
+	stroke-dashoffset: 34;
+}
+
+/* Both states */
+.btn--running,
+.btn--done {
+	outline: none;
+	pointer-events: none;
+	width: 3em;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.btn--running .btn__text,
+.btn--done .btn__text {
+	color: transparent;
+	transition: 0.3s ease-in-out, 0.3s steps(1);
+    width: 30%;
+    padding: 0.75em 1em;
+}
+.btn--running .btn__progress,
+.btn--done .btn__progress {
+	visibility: visible;
+}
+
+/* Running state */
+.btn--running .btn__text {
+	background-color: var(--bg2);
+	visibility: hidden;
+}
+.btn--running .btn__progress {
+	transition: 0.3s 0.3s steps(1);
+}
+.btn--running .btn__progress-track {
+	right: 20px;
+	stroke-width: 8;
+	transition: 0.3s 0.3s ease-in-out, 0.3s 0.3s ease-in-out;
+}
+.btn--running .btn__progress-fill {
+	stroke-dashoffset: 0;
+	transition: 2s 0.6s linear;
+}
+
+/* Done state */
+.btn--done .btn__progress-track {
+	stroke: var(--primary1);
+	transition: 0.3s ease-in-out, 0.3s ease-in-out;
+}
+.btn--done .btn__progress-check {
+	stroke-dashoffset: 0;
+	transition: 0.3s 0.3s ease-out;
 }
 
 main form .pay-input:focus:invalid{
